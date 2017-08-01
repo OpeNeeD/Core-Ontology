@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/openeed/core-ontology#"
+     xml:base="http://purl.org/openeed/core-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:core-ontology="http://purl.org/openeed/core-ontology#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.org/openeed/core-ontology">
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/obi/2017-02-22/obi.owl"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/vcard/ns"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001937 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001937"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#assessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#assessedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Expert"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#declaredBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#declaredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#derivedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#derivedBy">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Expert"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#derivedIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#derivedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Metric"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Study"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#expresses -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#expresses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://purl.org/openeed/core-ontology#isExpresedBy"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Desire"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Need"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#hasMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#hasProperPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#hasProperPart">
+        <owl:inverseOf rdf:resource="http://purl.org/openeed/core-ontology#isProperPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#involvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#involvedIn">
+        <owl:inverseOf rdf:resource="http://purl.org/openeed/core-ontology#performedBy"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Expert"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Study"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#isExpresedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#isExpresedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Need"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Desire"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#isProperPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#isProperPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#isSatisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#isSatisfiedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://purl.org/openeed/core-ontology#satisfies"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Desire"/>
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Need"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Satisfier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#memberOf">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Subject"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#performedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#performedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#precedes -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#precedes">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#OrderedCategory"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#OrderedCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#refersTo -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#refersTo">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#reflectsInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#reflectsInputOf">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Community"/>
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#satisfies -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#satisfies">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Satisfier"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Desire"/>
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Need"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#succeeds -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/openeed/core-ontology#succeeds">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#OrderedCategory"/>
+        <rdfs:range rdf:resource="http://purl.org/openeed/core-ontology#OrderedCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#compliesTo -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#compliesTo">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#dateEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#dateEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#dateStart -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#dateStart">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Study"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#facet -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#facet">
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Category"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Category"/>
+                    <rdf:Description rdf:about="http://purl.org/openeed/core-ontology#Metric"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#value -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/openeed/core-ontology#value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+
+    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
+        <owl:equivalentClass rdf:resource="http://purl.org/openeed/core-ontology#Metric"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Category -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Category"/>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Community -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Community"/>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Desire -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Desire">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+        <owl:disjointWith rdf:resource="http://purl.org/openeed/core-ontology#Need"/>
+        <owl:disjointWith rdf:resource="http://purl.org/openeed/core-ontology#Satisfier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Expert -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Expert">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#HumanRequirement -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Metric -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Metric">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Need -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Need">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+        <owl:disjointWith rdf:resource="http://purl.org/openeed/core-ontology#Satisfier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#NeedsTheory -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#NeedsTheory"/>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#OrderedCategory -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#OrderedCategory">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#Category"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Person -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Person">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2006/vcard/ns#Individual"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Satisfier -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Satisfier">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#HumanRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Study -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Study"/>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Subject -->
+
+    <owl:Class rdf:about="http://purl.org/openeed/core-ontology#Subject">
+        <rdfs:subClassOf rdf:resource="http://purl.org/openeed/core-ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Individual -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2006/vcard/ns#Individual"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#ActiveStudyParticipants -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#ActiveStudyParticipants">
+        <rdf:type rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#CleannessSupport -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#CleannessSupport">
+        <assessedBy rdf:resource="http://purl.org/openeed/core-ontology#StudyResultsAssessors"/>
+        <value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Expert-A -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#Expert-A">
+        <rdf:type rdf:resource="http://purl.org/openeed/core-ontology#Expert"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#Sauberkeit_Konfidenzwert -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#Sauberkeit_Konfidenzwert">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000071"/>
+        <obo:OBI_0001937 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">77</obo:OBI_0001937>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#StudyResultsAssessors -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#StudyResultsAssessors">
+        <rdf:type rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+        <isProperPartOf rdf:resource="http://purl.org/openeed/core-ontology#StuwerviertelLocalCommunity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/openeed/core-ontology#StuwerviertelLocalCommunity -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/openeed/core-ontology#StuwerviertelLocalCommunity">
+        <rdf:type rdf:resource="http://purl.org/openeed/core-ontology#Community"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.3.1) https://github.com/owlcs/owlapi -->
+
